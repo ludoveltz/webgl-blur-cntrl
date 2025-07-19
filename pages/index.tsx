@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
@@ -36,7 +37,7 @@ export default function HomePage() {
         flexWrap: 'wrap',
         justifyContent: 'center'
       }}>
-        <a 
+        <Link 
           href="/test-webgl/" 
           style={{
             backgroundColor: '#007acc',
@@ -52,8 +53,8 @@ export default function HomePage() {
           onMouseOver={e => e.currentTarget.style.transform = 'translateY(-2px)'}
           onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}
         >
-          🎮 Tester l'effet WebGL
-        </a>
+          🎮 Tester l&apos;effet WebGL
+        </Link>
       </div>
 
       <div style={{
@@ -74,8 +75,8 @@ export default function HomePage() {
           fontSize: '1.1rem'
         }}>
           <li><strong>Activez le mode développeur</strong> dans Account Settings</li>
-          <li>Dans l'éditeur Control CMS, cliquez sur l'icône <strong>🧩 puzzle</strong></li>
-          <li>Cliquez sur <strong>"custom"</strong></li>
+          <li>Dans l&apos;éditeur Control CMS, cliquez sur l&apos;icône <strong>🧩 puzzle</strong></li>
+          <li>Cliquez sur <strong>&quot;custom&quot;</strong></li>
           <li>Tapez exactement : <code style={{ 
             backgroundColor: '#f0f0f0', 
             padding: '3px 8px',
@@ -83,7 +84,7 @@ export default function HomePage() {
             fontFamily: 'monospace'
           }}>webgl-progressive-blur</code></li>
           <li><strong>Sauvegardez et publiez</strong> votre page</li>
-          <li>L'effet de flou progressif apparaîtra ! 🎉</li>
+          <li>L&apos;effet de flou progressif apparaîtra ! 🎉</li>
         </ol>
 
         <div style={{

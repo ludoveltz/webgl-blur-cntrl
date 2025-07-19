@@ -38,7 +38,7 @@ export default function TestWebGLPage() {
           {/* Section avec images */}
           <section style={{ textAlign: 'center' }}>
             <h2 style={{ color: '#555', marginBottom: '2rem', fontSize: '2rem' }}>
-              📸 Galerie d'images
+              📸 Galerie d&apos;images
             </h2>
             <div style={{ 
               display: 'grid', 
@@ -173,10 +173,10 @@ export default function TestWebGLPage() {
               lineHeight: '1.8'
             }}>
               <li>🔍 Regardez le **haut** et le **bas** de la page</li>
-              <li>📱 L'effet de flou progressif couvre 30% de l'écran en haut et en bas</li>
+              <li>📱 L&apos;effet de flou progressif couvre 30% de l&apos;écran en haut et en bas</li>
               <li>🌟 Le contenu au centre reste net</li>
-              <li>📜 Scrollez pour voir l'effet en action</li>
-              <li>💻 L'effet est global sur toute la viewport</li>
+              <li>📜 Scrollez pour voir l&apos;effet en action</li>
+              <li>💻 L&apos;effet est global sur toute la viewport</li>
             </ul>
           </section>
         </div>
