@@ -1,19 +1,18 @@
 import React from 'react';
 
-interface WebGLProgressiveBlurProps {
+// Composant Progressive Blur simplifié pour Control CMS
+export const WebGLProgressiveBlur = ({ 
+  blurStrength = 15,
+  topHeight = 25,
+  bottomHeight = 25
+}: {
   blurStrength?: number;
   topHeight?: number;
   bottomHeight?: number;
-}
-
-export const WebGLProgressiveBlur: React.FC<WebGLProgressiveBlurProps> = ({ 
-  blurStrength = 25,
-  topHeight = 25,
-  bottomHeight = 25
 }) => {
   return (
     <>
-      {/* FLOU PROGRESSIF HAUT - Effet fluide avec mask gradient */}
+      {/* Flou progressif HAUT */}
       <div
         style={{
           position: 'fixed',
@@ -21,6 +20,9 @@ export const WebGLProgressiveBlur: React.FC<WebGLProgressiveBlurProps> = ({
           left: 0,
           right: 0,
           height: `${topHeight}%`,
+          background: `linear-gradient(to bottom, 
+            rgba(255,255,255,0.05) 0%, 
+            transparent 100%)`,
           backdropFilter: `blur(${blurStrength}px)`,
           WebkitBackdropFilter: `blur(${blurStrength}px)`,
           mask: `linear-gradient(to bottom, 
@@ -42,7 +44,7 @@ export const WebGLProgressiveBlur: React.FC<WebGLProgressiveBlurProps> = ({
         }}
       />
 
-      {/* FLOU PROGRESSIF BAS - Effet fluide avec mask gradient */}
+      {/* Flou progressif BAS */}
       <div
         style={{
           position: 'fixed',
@@ -50,6 +52,9 @@ export const WebGLProgressiveBlur: React.FC<WebGLProgressiveBlurProps> = ({
           left: 0,
           right: 0,
           height: `${bottomHeight}%`,
+          background: `linear-gradient(to top, 
+            rgba(255,255,255,0.05) 0%, 
+            transparent 100%)`,
           backdropFilter: `blur(${blurStrength}px)`,
           WebkitBackdropFilter: `blur(${blurStrength}px)`,
           mask: `linear-gradient(to top, 
@@ -71,23 +76,12 @@ export const WebGLProgressiveBlur: React.FC<WebGLProgressiveBlurProps> = ({
         }}
       />
 
-      {/* Badge de debug fixe */}
-      <div
-        style={{
-          position: 'fixed',
-          top: '20px',
-          right: '20px',
-          background: 'rgba(0,0,0,0.8)',
-          color: 'white',
-          padding: '8px 12px',
-          borderRadius: '6px',
-          fontSize: '12px',
-          fontFamily: 'monospace',
-          zIndex: 10000
-        }}
-      >
-        🌟 Progressive Blur Fluide | Haut: {topHeight}% | Bas: {bottomHeight}% | Max: {blurStrength}px
-      </div>
+      {/* Structure Control CMS cachée */}
+      <figure className="media" style={{ display: 'none' }}>
+        <img alt="Progressive Blur Effect" />
+      </figure>
     </>
   );
-}; 
+};
+
+export default WebGLProgressiveBlur; 
