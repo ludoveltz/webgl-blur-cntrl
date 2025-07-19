@@ -1,25 +1,31 @@
 {
   "name": "webgl-progressive-blur-cntrl",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build",
-    "generate-layouts": "cntrl-sdk generate-layouts -o styles/cntrl.scss"
+    "lint": "next lint",
+    "export": "npm run build",
+    "generate-layouts": "cntrl-sdk generate-layouts -o styles/cntrl.scss",
+    "prebuild": "npm run generate-layouts"
   },
   "dependencies": {
-    "@cntrl-site/sdk-nextjs": "latest",
-    "next": "^14.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@cntrl-site/sdk-nextjs": "^1.0.0",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "ogl": "^1.0.6",
+    "gsap": "^3.12.2"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "typescript": "^5.0.0"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "sass": "^1.77.0",
+    "typescript": "^5"
   }
 }

@@ -1,14 +1,18 @@
+import '../styles/reset.css';
 import type { AppProps } from 'next/app';
 import { CntrlProvider, customItems } from '@cntrl-site/sdk-nextjs';
-import { TestComponent } from '../components/TestComponent';
+import '@cntrl-site/sdk/style/sdk.css';
+import { WebGLProgressiveBlur } from '../components/WebGLProgressiveBlur';
 
-// Enregistrer le composant personnalisé WebGL (version ultra-simple pour debug)
-customItems.define('webgl-blur', TestComponent);
+// Enregistrer le composant WebGL Progressive Blur pour Control CMS
+customItems.define('webgl-progressive-blur', WebGLProgressiveBlur);
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <CntrlProvider>
       <Component {...pageProps} />
     </CntrlProvider>
   );
-} 
+}
+
+export default App;
